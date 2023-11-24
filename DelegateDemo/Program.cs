@@ -4,6 +4,10 @@
     public delegate void MathDelegate(int num1,int num2);
     internal class Program
     {
+        public int MyProperty {  get; set; }
+        public int MyValue { get;private set; }//GET OR SET CAN HAVE DIFF ACCESSIBILTY
+
+
 
         static void Main(string[] args)
         {
@@ -13,8 +17,17 @@
             mathDel += Mul;
             mathDel += Div;
 
-            
-           // MathDelegate mathdel2=new MathDelegate(Add); // alternate method
+            MathDelegate mathdel1 = delegate (int a, int b) //Anonymous Method
+            {
+                Console.WriteLine(a + b);
+            };
+            MathDelegate mathdel2 =  (int a, int b) => //Lamda
+            {
+                Console.WriteLine(a + b);
+            };
+
+
+            // MathDelegate mathdel2=new MathDelegate(Add); // alternate method
 
             //Fourth Step
 
